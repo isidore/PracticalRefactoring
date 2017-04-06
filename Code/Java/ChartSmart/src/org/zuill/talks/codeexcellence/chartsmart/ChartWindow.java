@@ -1,13 +1,11 @@
 package org.zuill.talks.codeexcellence.chartsmart;
 
-import java.awt.AWTKeyStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import javax.swing.JPanel;
 
@@ -58,11 +56,6 @@ public class ChartWindow extends JPanel
     {
       initializeDrawArea();
     }
-  }
-  @Override
-  public Set<AWTKeyStroke> getFocusTraversalKeys(int id)
-  {
-    return super.getFocusTraversalKeys(id);
   }
   public void paint(Graphics g)
   {
