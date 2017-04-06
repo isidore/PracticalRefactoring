@@ -16,31 +16,9 @@ public class ChartWindow extends JPanel
 {
   private class Unit
   {
-    private String str_n2;
-    private double value;
-    public void setName(String name)
-    {
-      this.str_n2 = name;
-    }
-    public String getName()
-    {
-      return str_n2;
-    }
-    public void setValue(double v1)
-    {
-      this.value = v1;
-    }
-    public double getValue()
-    {
-      return value;
-    }
   }
   private String   jjD;
   private String   __APARAM__Z;
-  /**
-   * 
-   */
-  private String[] horizontalLabelNames;
   /**
    * It's the vertical label names
    */
