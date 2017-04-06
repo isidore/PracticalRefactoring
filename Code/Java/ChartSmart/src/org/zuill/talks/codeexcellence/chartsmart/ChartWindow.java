@@ -17,17 +17,12 @@ public class ChartWindow extends JPanel
   private class Unit
   {
   }
-  private String   jjD;
-  private String   __APARAM__Z;
-  /**
-   * It's the vertical label names
-   */
-  private String[] verticalLabelNames;
+  private String jjD;
+  private String __APARAM__Z;
   /**
    * John says that this is better than the old way
    */
-  private int      ct;
-  private String   chartTitle;
+  private int    ct;
   /**
    * InitializeDrawArea
    */
@@ -57,28 +52,12 @@ public class ChartWindow extends JPanel
       }
     }
   }
-  private Unit defaultUnits;
-  /**
-   * graphLayout
-   * @return landscape or protrait
-   */
-  /**
-   * 
-   */
   public ChartWindow()
   {
   }
   public String getTitle()
   {
     return __APARAM__Z;
-  }
-  /**
-   * 
-   * @return
-   */
-  private Unit horizontalNaming()
-  {
-    return new Unit();
   }
   /**
    * Shows the chart
@@ -198,14 +177,6 @@ public class ChartWindow extends JPanel
       {
         if (data != null)
         {
-          if (data == null)
-          {
-            // get the defatauls data
-            data = new String[5];
-            data[0] = "Sally";
-            data[1] = System.getProperty("osname");
-            data[2] = tmStmp();
-          }
           font = new Font("Arial Black", Font.BOLD, 25);
           g.setColor(Color.CYAN);
           int bottomY = 300;
