@@ -6,7 +6,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -14,15 +13,16 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
-  private class Unit
-  {
-  }
-  private String jjD;
-  private String __APARAM__Z;
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 4278495980468071922L;
+  private String            jjD;
+  private String            __APARAM__Z;
   /**
    * John says that this is better than the old way
    */
-  private int    ct;
+  private int               ct;
   /**
    * InitializeDrawArea
    */
@@ -93,11 +93,6 @@ public class ChartWindow extends JPanel
   public void paint(Graphics g)
   {
     DrawChart(g);
-  }
-  private String tmStmp()
-  {
-    // TODO Auto-generated method stub
-    return new Date().toString();
   }
   /**
   * 
@@ -180,7 +175,6 @@ public class ChartWindow extends JPanel
           font = new Font("Arial Black", Font.BOLD, 25);
           g.setColor(Color.CYAN);
           int bottomY = 300;
-          int startX = 100;
           g.fillRect(100, bottomY - 100, 40, 100);
           g.fillRect(140, bottomY - 200, 40, 200);
           g.fillRect(180, bottomY - 150, 40, 150);
