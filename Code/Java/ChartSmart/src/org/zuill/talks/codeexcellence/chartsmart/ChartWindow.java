@@ -20,29 +20,22 @@ public class ChartWindow extends JPanel
     setPreferredSize(new Dimension(600, 600));
     if (ct == 406)
     {
-      setBarChartMode();
+      setChartMode("Bar");
     }
     else
     {
-      if (jjD.equals("rpfll"))
-      {
-        __APARAM__Z = "Pie Chart - Single Mode";
-      }
-      else
-      {
-        __APARAM__Z = "Pie Chart - Compare Mode";
-      }
+      setChartMode("Pie");
     }
   }
-  public void setBarChartMode()
+  public void setChartMode(String chartType)
   {
     if (jjD.equals("rpfll"))
     {
-      __APARAM__Z = "Bar Chart - Single Mode";
+      __APARAM__Z = chartType + " Chart - Single Mode";
     }
     else
     {
-      __APARAM__Z = "Bar Chart - Compare Mode";
+      __APARAM__Z = chartType + " Chart - Compare Mode";
     }
   }
   public ChartWindow()
