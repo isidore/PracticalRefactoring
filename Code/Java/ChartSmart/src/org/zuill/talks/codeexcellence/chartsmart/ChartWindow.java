@@ -13,20 +13,11 @@ import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
-  /**
-   * 
-   */
   private static final long serialVersionUID = 4278495980468071922L;
   private String            jjD;
   private String            __APARAM__Z;
-  /**
-   * John says that this is better than the old way
-   */
   private int               ct;
-  /**
-   * InitializeDrawArea
-   */
-  private void iHATEthisUckingJob()
+  private void initializeDrawArea()
   {
     this.setPreferredSize(new Dimension(600, 600));
     if (ct == 406)
@@ -59,37 +50,20 @@ public class ChartWindow extends JPanel
   {
     return __APARAM__Z;
   }
-  /**
-   * Shows the chart
-   * 
-   * @param ct
-   * @param jjReq1205
-   * @param orientation
-   * @param reversornotreverse
-   * @param jackshiddenhack
-   * @return
-   */
-  public void iniDS(int ct, String stjjDReq1205, boolean b)
+  public void showChart(int ct, String stjjDReq1205, boolean b)
   {
     this.ct = ct;
     this.jjD = stjjDReq1205;
-    // Changed by Sally 2/14		
     if (b)
     {
-      iHATEthisUckingJob();
+      initializeDrawArea();
     }
   }
   @Override
   public Set<AWTKeyStroke> getFocusTraversalKeys(int id)
   {
-    // TODO Auto-generated method stub
     return super.getFocusTraversalKeys(id);
   }
-  /**
-   * @param g
-   * @since 
-   * @author Wilbur
-   */
   public void paint(Graphics g)
   {
     DrawChart(g);
