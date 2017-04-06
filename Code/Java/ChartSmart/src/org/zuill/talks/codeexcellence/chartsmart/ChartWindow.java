@@ -17,17 +17,10 @@ public class ChartWindow extends JPanel
   private int               ct;
   private void initializeDrawArea()
   {
-    this.setPreferredSize(new Dimension(600, 600));
+    setPreferredSize(new Dimension(600, 600));
     if (ct == 406)
     {
-      if (jjD.equals("rpfll"))
-      {
-        __APARAM__Z = "Bar Chart - Single Mode";
-      }
-      else
-      {
-        __APARAM__Z = "Bar" + " Chart - Compare Mode";
-      }
+      setBarChartMode();
     }
     else
     {
@@ -39,6 +32,17 @@ public class ChartWindow extends JPanel
       {
         __APARAM__Z = "Pie Chart - Compare Mode";
       }
+    }
+  }
+  public void setBarChartMode()
+  {
+    if (jjD.equals("rpfll"))
+    {
+      __APARAM__Z = "Bar Chart - Single Mode";
+    }
+    else
+    {
+      __APARAM__Z = "Bar Chart - Compare Mode";
     }
   }
   public ChartWindow()
