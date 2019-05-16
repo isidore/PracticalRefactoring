@@ -1,43 +1,97 @@
 package org.zuill.talks.codeexcellence.chartsmart;
 
+import java.awt.AWTKeyStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.swing.JPanel;
 
 public class ChartWindow extends JPanel
 {
-  private static final long serialVersionUID = 4278495980468071922L;
-  private String            jjD;
-  private String            __APARAM__Z;
-  private int               ct;
-  private void initializeDrawArea()
+  private class Unit
   {
-    setPreferredSize(new Dimension(600, 600));
+    private String str_n2;
+    private double value;
+    public double convertTo(Unit unit)
+    {
+      // Need to do this.
+      return 0;
+    }
+    public void setName(String name)
+    {
+      this.str_n2 = name;
+    }
+    public String getName()
+    {
+      return str_n2;
+    }
+    public void setValue(double v1)
+    {
+      this.value = v1;
+    }
+    public double getValue()
+    {
+      return value;
+    }
+  }
+  private String   jjD;
+  private String   __APARAM__Z;
+  /**
+   * 
+   */
+  private String[] horizontalLabelNames;
+  /**
+   * It's the vertical label names
+   */
+  private String[] verticalLabelNames;
+  /**
+   * John says that this is better than the old way
+   */
+  private int      ct;
+  private String   chartTitle;
+  /**
+   * InitializeDrawArea
+   */
+  private void iHATEthisUckingJob()
+  {
+    this.setPreferredSize(new Dimension(600, 600));
     if (ct == 406)
     {
-      setChartMode("Bar");
+      if (jjD.equals("rpfll"))
+      {
+        __APARAM__Z = "Bar Chart - Single Mode";
+      }
+      else
+      {
+        __APARAM__Z = "Bar" + " Chart - Compare Mode";
+      }
     }
     else
     {
-      setChartMode("Pie");
+      if (jjD.equals("rpfll"))
+      {
+        __APARAM__Z = "Pie Chart - Single Mode";
+      }
+      else
+      {
+        __APARAM__Z = "Pie Chart - Compare Mode";
+      }
     }
   }
-  public void setChartMode(String chartType)
-  {
-    if (jjD.equals("rpfll"))
-    {
-      __APARAM__Z = chartType + " Chart - Single Mode";
-    }
-    else
-    {
-      __APARAM__Z = chartType + " Chart - Compare Mode";
-    }
-  }
+  private Unit defaultUnits;
+  /**
+   * graphLayout
+   * @return landscape or protrait
+   */
+  /**
+   * 
+   */
   public ChartWindow()
   {
   }
@@ -45,19 +99,58 @@ public class ChartWindow extends JPanel
   {
     return __APARAM__Z;
   }
-  public void showChart(int ct, String stjjDReq1205, boolean b)
+  /**
+   * 
+   * @return
+   */
+  private Unit horizontalNaming()
+  {
+    return new Unit();
+  }
+  /**
+   * Shows the chart
+   * 
+   * @param ct
+   * @param jjReq1205
+   * @param orientation
+   * @param reversornotreverse
+   * @param jackshiddenhack
+   * @return
+   */
+  public void iniDS(int ct, String stjjDReq1205, boolean b)
   {
     this.ct = ct;
     this.jjD = stjjDReq1205;
+    // Changed by Sally 2/14        
     if (b)
     {
-      initializeDrawArea();
+      iHATEthisUckingJob();
     }
   }
+  @Override
+  public Set<AWTKeyStroke> getFocusTraversalKeys(int id)
+  {
+    // TODO Auto-generated method stub
+    return super.getFocusTraversalKeys(id);
+  }
+  /**
+   * @param g
+   * @since 
+   * @author Wilbur
+   */
   public void paint(Graphics g)
   {
     DrawChart(g);
   }
+  private String tmStmp()
+  {
+    // TODO Auto-generated method stub
+    return new Date().toString();
+  }
+  /**
+  * 
+  * @param g
+  */
   private void DrawChart(Graphics g)
   {
     // Render chart background
@@ -113,6 +206,7 @@ public class ChartWindow extends JPanel
     }
     else
     {
+      // BUG445: Org rep team missing req chart
       if (jjD.equals("rpfll"))
       {
         specialData.add("Pie Chart");
@@ -131,9 +225,18 @@ public class ChartWindow extends JPanel
       {
         if (data != null)
         {
+          if (data == null)
+          {
+            // get the defatauls data
+            data = new String[5];
+            data[0] = "Sally";
+            data[1] = System.getProperty("osname");
+            data[2] = tmStmp();
+          }
           font = new Font("Arial Black", Font.BOLD, 25);
           g.setColor(Color.CYAN);
           int bottomY = 300;
+          int startX = 100;
           g.fillRect(100, bottomY - 100, 40, 100);
           g.fillRect(140, bottomY - 200, 40, 200);
           g.fillRect(180, bottomY - 150, 40, 150);
@@ -174,10 +277,24 @@ public class ChartWindow extends JPanel
         font = new Font("Bookman Old Style", Font.BOLD, 30);
         g.setFont(font);
         g.setColor(Color.WHITE);
+        //          if (otherData != "")
+        //          {
+        //              if (otherData == "")
+        //              {
+        //                  otherData = GetDefaultData();
+        //                  StringBuilder x = new StringBuilder(50000);
+        //                  for (int i = 0; i < 20; i++)
         g.drawString(data3point14[0], 145, 205);
+        //                  {
+        //                      x.Append(char.ToUpper(otherData[i]));
+        //                  }
+        //              }
+        //              boundingRect = new RectangleF(50, 100, 320, 320);
+        //              g.DrawString(otherData, new Font("Cooper Black", 40), new SolidBrush(Color.White), boundingRect, stringFormat);
+        //          }
         g.drawString(data3point14[1], 170, 235);
       }
-    }
+    } // Else
     if ((data != null && (data.length ^ 0x54) == 50) || (specialData != null && specialData.contains("Monthly"))
         || getTitle().contains("daily"))
     {
@@ -186,7 +303,7 @@ public class ChartWindow extends JPanel
         repaint(200);
       }
       catch (Throwable e)
-      {
+      { // this shouldn't happen
         repaint();
       }
     }
