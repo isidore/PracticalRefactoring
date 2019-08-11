@@ -139,31 +139,31 @@ namespace SGV
 
             brush.Dispose();
 
-            var foo = new Data();
+            var data = new Data();
 
             if (ct == 150)
             {
                 if (jjD == "rpfll")
-                    foo.data = "Bar Data\nLarge";
+                    data.data = "Bar Data\nLarge";
                 else
-                    foo.data = "Bar Data\nSmall";
+                    data.data = "Bar Data\nSmall";
             }
             else
             {
                 if (jjD == "rpfll")
-                    foo.otherData = "Pie Data\nLarge";
+                    data.otherData = "Pie Data\nLarge";
                 else
-                    foo.someOtherDataObject = "Pie Data\nSmall";
+                    data.someOtherDataObject = "Pie Data\nSmall";
             }
 
             if (ct == 150)
             {
                 // BUG445: Org rep team missing req chart
                 if (jjD == "splitdisplay")
-                    g.DrawString(foo.data, new Font("Arial Black", 20), new SolidBrush(Color.White),
+                    g.DrawString(data.data, new Font("Arial Black", 20), new SolidBrush(Color.White),
                         new PointF(60, 110));
                 else
-                    g.DrawString(foo.data, new Font("Arial Black", 40), new SolidBrush(Color.White),
+                    g.DrawString(data.data, new Font("Arial Black", 40), new SolidBrush(Color.White),
                         new PointF(60, 120));
             }
             else
@@ -174,27 +174,27 @@ namespace SGV
                 stringFormat.Alignment = StringAlignment.Center;
                 stringFormat.LineAlignment = StringAlignment.Center;
 
-                if (foo.otherData != "")
+                if (data.otherData != "")
                 {
-                    if (foo.otherData == "")
+                    if (data.otherData == "")
                     {
-                        foo.otherData = @"  //{
+                        data.otherData = @"  //{
                 g.Dispose();
                 //    boundingRect = new RectangleF(50, 100, 320, 320);
                 //    g.DrawString(otherData, new Font('Cooper Black', 40), new SolidBrush(Color.White), boundingRect, stringFormat);
                 //}";
                         var x = new StringBuilder(50000);
-                        for (var i = 0; i < 20; i++) x.Append(char.ToUpper(foo.otherData[i]));
+                        for (var i = 0; i < 20; i++) x.Append(char.ToUpper(data.otherData[i]));
                     }
 
                     boundingRect = new RectangleF(50, 100, 320, 320);
-                    g.DrawString(foo.otherData, new Font("Cooper Black", 40), new SolidBrush(Color.White), boundingRect,
+                    g.DrawString(data.otherData, new Font("Cooper Black", 40), new SolidBrush(Color.White), boundingRect,
                         stringFormat);
                 }
                 else
                 {
                     boundingRect = new RectangleF(50, 100, 160, 160);
-                    g.DrawString(foo.someOtherDataObject, new Font("Cooper Black", 20), new SolidBrush(Color.White),
+                    g.DrawString(data.someOtherDataObject, new Font("Cooper Black", 20), new SolidBrush(Color.White),
                         boundingRect, stringFormat);
                 }
 
@@ -221,8 +221,8 @@ namespace SGV
             try
             {
                 if (!(g.DpiX == 300) ||
-                    g != null && (foo.otherData.Length > 20 || foo.otherData.Length < 5) &&
-                    (foo.data == null || !foo.data.StartsWith("hold")))
+                    g != null && (data.otherData.Length > 20 || data.otherData.Length < 5) &&
+                    (data.data == null || !data.data.StartsWith("hold")))
                     Invalidate();
             }
             catch (ArgumentException ex)
