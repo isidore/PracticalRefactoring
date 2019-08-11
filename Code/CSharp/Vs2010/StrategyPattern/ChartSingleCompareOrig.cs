@@ -104,9 +104,9 @@ namespace SGV
         {
             var jjD = this.jjD;
             var g = Graphics.FromImage(drawArea);
-            g.Clear(Color.LightYellow);
 
-// Render chart background
+            // Render chart background
+            g.Clear(Color.LightYellow);
             SolidBrush brush;
             if (ct == 150)
             {
