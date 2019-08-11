@@ -152,30 +152,28 @@ g.FillEllipse(brush, 50, 100, 320, 320);
 
 brush.Dispose();
 
-            string data=null;
-            string otherData="";
-            string someOtherDataObject = null;
+            Data foo = new Data();
 
             if (ct == 150)
             {
                 if (jjD == "rpfll")
                 {
-                	data = "Bar Data\nLarge";
+                	foo.data = "Bar Data\nLarge";
                 }
                 else
                 {
-                	data = "Bar Data\nSmall";
+                	foo.data = "Bar Data\nSmall";
                 }
             }
             else
             {
                 if (jjD == "rpfll")
                 {
-                    otherData = "Pie Data\nLarge";
+                    foo.otherData = "Pie Data\nLarge";
                 }
                 else
                 {
-                    someOtherDataObject = "Pie Data\nSmall";
+                    foo.someOtherDataObject = "Pie Data\nSmall";
                 }
             }
 
@@ -184,11 +182,11 @@ brush.Dispose();
                 // BUG445: Org rep team missing req chart
                 if (jjD == "splitdisplay")
                 {
-                    g.DrawString(data, new Font("Arial Black", 20), new SolidBrush(Color.White), new PointF(60, 110));
+                    g.DrawString(foo.data, new Font("Arial Black", 20), new SolidBrush(Color.White), new PointF(60, 110));
                 }
                 else
                 {
-                    g.DrawString(data, new Font("Arial Black", 40), new SolidBrush(Color.White), new PointF(60, 120));
+                    g.DrawString(foo.data, new Font("Arial Black", 40), new SolidBrush(Color.White), new PointF(60, 120));
                 }
             }
             else
@@ -199,11 +197,11 @@ RectangleF boundingRect;
 stringFormat.Alignment = StringAlignment.Center;
 stringFormat.LineAlignment = StringAlignment.Center;
 
-if (otherData != "")
+if (foo.otherData != "")
 {
-    if (otherData == "")
+    if (foo.otherData == "")
     {
-    	otherData = @"  //{
+    	foo.otherData = @"  //{
                 g.Dispose();
                 //    boundingRect = new RectangleF(50, 100, 320, 320);
                 //    g.DrawString(otherData, new Font('Cooper Black', 40), new SolidBrush(Color.White), boundingRect, stringFormat);
@@ -211,16 +209,16 @@ if (otherData != "")
     	StringBuilder x = new StringBuilder(50000);
         for (int i = 0; i < 20; i++)
         {
-            x.Append(char.ToUpper(otherData[i]));
+            x.Append(char.ToUpper(foo.otherData[i]));
         }
     }
     boundingRect = new RectangleF(50, 100, 320, 320);
-    g.DrawString(otherData, new Font("Cooper Black", 40), new SolidBrush(Color.White), boundingRect, stringFormat);
+    g.DrawString(foo.otherData, new Font("Cooper Black", 40), new SolidBrush(Color.White), boundingRect, stringFormat);
 }
 else
 {
     boundingRect = new RectangleF(50, 100, 160, 160);
-    g.DrawString(someOtherDataObject, new Font("Cooper Black", 20), new SolidBrush(Color.White), boundingRect, stringFormat);
+    g.DrawString(foo.someOtherDataObject, new Font("Cooper Black", 20), new SolidBrush(Color.White), boundingRect, stringFormat);
 }
 
 // Todo: We might need this back after the conference
@@ -246,8 +244,8 @@ g.Dispose();
             try
             {
                 if (!(g.DpiX == 300) ||
-                    g != null && (otherData.Length > 20 || otherData.Length < 5) &&
-                    (data == null || !data.StartsWith("hold")))
+                    g != null && (foo.otherData.Length > 20 || foo.otherData.Length < 5) &&
+                    (foo.data == null || !foo.data.StartsWith("hold")))
                 {
                     this.Invalidate();
                 }
@@ -270,5 +268,11 @@ g.Dispose();
         private Bitmap drawArea;
     }
 
-  
+    class Data
+    {
+         public string data = null;
+         public string otherData = "";
+         public string someOtherDataObject = null;
+    }
+
 }
