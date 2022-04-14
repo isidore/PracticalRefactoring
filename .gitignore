@@ -70,6 +70,9 @@ ipch/
 *.vsp
 *.vspx
 
+# IntelliJ IDEA
+.idea/
+
 # Guidance Automation Toolkit
 *.gpState
 
