@@ -3,11 +3,11 @@ package org.zuill.talks.codeexcellence.chartsmart;
 import static org.junit.Assert.assertEquals;
 
 import org.approvaltests.awt.AwtApprovals;
-import org.approvaltests.reporters.DelayedClipboardReporter;
-import org.approvaltests.reporters.UseReporter;
+import org.approvaltests.reporters.*;
 import org.junit.Test;
 
-@UseReporter(org.approvaltests.reporters.FileCaptureReporter.class)
+//@UseReporter(FileCaptureReporter.class)
+@UseReporter(ImageWebReporter.class)
 public class ChartSmartTest
 {
   @Test
