@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "maven"
-    directory: "/"
+    directory: "/Code/Java/ChartSmart"
     schedule:
       interval: "daily"
       time: "02:00"
