@@ -2,13 +2,12 @@ package org.zuill.talks.codeexcellence.chartsmart;
 
 import static org.junit.Assert.assertEquals;
 
-import org.approvaltests.Approvals;
 import org.approvaltests.awt.AwtApprovals;
 import org.approvaltests.reporters.DelayedClipboardReporter;
 import org.approvaltests.reporters.UseReporter;
 import org.junit.Test;
 
-@UseReporter(DelayedClipboardReporter.class)
+@UseReporter(org.approvaltests.reporters.FileCaptureReporter.class)
 public class ChartSmartTest
 {
   @Test
