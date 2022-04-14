@@ -3,6 +3,7 @@ package org.zuill.talks.codeexcellence.chartsmart;
 import static org.junit.Assert.assertEquals;
 
 import org.approvaltests.Approvals;
+import org.approvaltests.awt.AwtApprovals;
 import org.approvaltests.reporters.DelayedClipboardReporter;
 import org.approvaltests.reporters.UseReporter;
 import org.junit.Test;
@@ -14,14 +15,14 @@ public class ChartSmartTest
   public void testMainWindow() throws Exception
   {
     ChartSmart chartSmart = new ChartSmart();
-    Approvals.verify(chartSmart);
+    AwtApprovals.verify(chartSmart);
   }
   @Test
   public void testBarChartWindow() throws Exception
   {
     ChartWindow chartSmart = new ChartWindow();
     chartSmart.iniDS(406, "rpfll", true);
-    Approvals.verify(chartSmart);
+    AwtApprovals.verify(chartSmart);
     assertEquals("Bar Chart - Single Mode", chartSmart.getTitle());
   }
   @Test
@@ -29,7 +30,7 @@ public class ChartSmartTest
   {
     ChartWindow chartSmart = new ChartWindow();
     chartSmart.iniDS(323, "rpfll", true);
-    Approvals.verify(chartSmart);
+    AwtApprovals.verify(chartSmart);
     assertEquals("Pie Chart - Single Mode", chartSmart.getTitle());
   }
   @Test
@@ -37,7 +38,7 @@ public class ChartSmartTest
   {
     ChartWindow chartSmart = new ChartWindow();
     chartSmart.iniDS(406, "shareddisplay", true);
-    Approvals.verify(chartSmart);
+    AwtApprovals.verify(chartSmart);
     assertEquals("Bar Chart - Compare Mode", chartSmart.getTitle());
   }
   @Test
@@ -45,7 +46,7 @@ public class ChartSmartTest
   {
     ChartWindow chartSmart = new ChartWindow();
     chartSmart.iniDS(323, "shareddisplay", true);
-    Approvals.verify(chartSmart);
+    AwtApprovals.verify(chartSmart);
     assertEquals("Pie Chart - Compare Mode", chartSmart.getTitle());
   }
 }
