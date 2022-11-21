@@ -41,11 +41,6 @@ namespace SGV
             g.Clear(Color.LightYellow);
         }
 
-        protected override void OnSizeChanged(EventArgs e)
-        {
-            base.OnSizeChanged(e);
-        }
-
         /// <summary>
         /// </summary>
         /// <param name="sender"></param>
