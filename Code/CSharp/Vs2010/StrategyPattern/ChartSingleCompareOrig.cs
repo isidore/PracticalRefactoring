@@ -8,9 +8,6 @@ namespace SGV
 {
     public partial class ChartSingleCompareOrig : Form
     {
-        /// <summary>
-        ///     John says that this is better than the old way
-        /// </summary>
         private int ct;
 
         /// <summary>
