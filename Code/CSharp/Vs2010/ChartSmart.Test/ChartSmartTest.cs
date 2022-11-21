@@ -7,7 +7,7 @@ namespace MsTest
 {
 
 	[TestClass]
-	[UseReporter(typeof(DiffReporter))]
+	[UseReporter(typeof(AllFailingTestsClipboardReporter))]
 	public class ChartSmartTest
 	{
 		[TestMethod]
