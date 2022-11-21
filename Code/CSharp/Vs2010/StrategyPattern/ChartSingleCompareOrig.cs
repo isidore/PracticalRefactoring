@@ -41,10 +41,6 @@ namespace SGV
             g.Clear(Color.LightYellow);
         }
 
-        /// <summary>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void ChartSingleCompareOrig_Paint(object sender, PaintEventArgs e)
         {
             Graphics g;
