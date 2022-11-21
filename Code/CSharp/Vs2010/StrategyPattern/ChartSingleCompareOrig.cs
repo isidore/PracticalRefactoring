@@ -34,9 +34,6 @@ namespace SGV
             if (b) ShowDialog();
         }
 
-        /// <summary>
-        ///     //
-        /// </summary>
         private void InitializeDrawArea()
         {
             Graphics g;
