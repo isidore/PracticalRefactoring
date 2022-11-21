@@ -15,12 +15,6 @@ namespace SGV
         private Bitmap drawArea;
         private string jjD;
 
-        /// <summary>
-        ///     graphLayout
-        /// </summary>
-        /// <returns>landscape or protrait</returns>
-        /// <summary>
-        /// </summary>
         public ChartSingleCompareOrig()
         {
             InitializeComponent();
