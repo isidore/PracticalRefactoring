@@ -48,8 +48,6 @@ namespace SGV
             g.DrawImage(drawArea, 0, 0, drawArea.Width, drawArea.Height);
         }
 
-        /// <summary>
-        /// </summary>
         private void DrawChart()
         {
             var jjD = this.jjD;
