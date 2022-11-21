@@ -156,7 +156,6 @@ namespace SGV
             }
             catch (ArgumentException ex)
             {
-                // We shouldn't get this
                 Invalidate();
             }
         }
