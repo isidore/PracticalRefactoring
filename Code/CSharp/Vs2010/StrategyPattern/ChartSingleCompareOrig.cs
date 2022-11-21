@@ -159,13 +159,5 @@ namespace SGV
                 Invalidate();
             }
         }
-
-        private class Unit
-        {
-            public double convertTo(Unit unit)
-            {
-                return 0;
-            }
-        }
     }
 }
