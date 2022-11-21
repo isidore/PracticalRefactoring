@@ -107,7 +107,6 @@ namespace SGV
 
             if (ct == 150)
             {
-                // BUG445: Org rep team missing req chart
                 if (jjD == "splitdisplay")
                     g.DrawString(data, new Font("Arial Black", 20), new SolidBrush(Color.White), new PointF(60, 110));
                 else
