@@ -146,24 +146,7 @@ namespace SGV
                         boundingRect, stringFormat);
                 }
 
-// Todo: We might need this back after the conference
-//StringFormat stringFormat = new StringFormat();
-//RectangleF boundingRect;
-
-//stringFormat.Alignment = StringAlignment.Center;
-//stringFormat.LineAlignment = StringAlignment.Center;
-
-//if (otherData != "")
-//{
                 g.Dispose();
-                //    boundingRect = new RectangleF(50, 100, 320, 320);
-                //    g.DrawString(otherData, new Font("Cooper Black", 40), new SolidBrush(Color.White), boundingRect, stringFormat);
-                //}
-                //else
-                //{
-                //    boundingRect = new RectangleF(50, 100, 160, 160);
-                //    g.DrawString(someOtherDataObject, new Font("Cooper Black", 20), new SolidBrush(Color.White), boundingRect, stringFormat);
-                //}
             }
 
             try
