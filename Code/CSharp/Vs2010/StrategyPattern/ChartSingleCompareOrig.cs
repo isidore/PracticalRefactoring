@@ -10,8 +10,6 @@ namespace SGV
     {
         private int ct;
 
-        /// <summary>
-        /// </summary>
         private Bitmap drawArea;
         private string jjD;
 
