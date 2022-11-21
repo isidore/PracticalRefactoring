@@ -53,7 +53,7 @@ namespace SGV
             var g = Graphics.FromImage(drawArea);
             g.Clear(Color.LightYellow);
 
-// Render chart background
+            // Render chart background
             SolidBrush brush;
             if (ct == 150)
             {
