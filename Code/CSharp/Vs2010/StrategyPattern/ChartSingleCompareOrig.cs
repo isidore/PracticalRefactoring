@@ -8,28 +8,15 @@ namespace SGV
 {
     public partial class ChartSingleCompareOrig : Form
     {
-        private string chartTitle;
-
         /// <summary>
         ///     John says that this is better than the old way
         /// </summary>
         private int ct;
 
-        private Unit defaultUnits;
-
         /// <summary>
         /// </summary>
         private Bitmap drawArea;
-
-        private string[] horizontalLabelNames;
-
-
         private string jjD;
-
-        /// <summary>
-        ///     It's the vertical label names
-        /// </summary>
-        private string[] verticalLabelNames;
 
         /// <summary>
         ///     graphLayout
@@ -40,15 +27,6 @@ namespace SGV
         public ChartSingleCompareOrig()
         {
             InitializeComponent();
-        }
-
-
-        /// <summary>
-        /// </summary>
-        /// <returns></returns>
-        private Unit horizontalNaming()
-        {
-            return new Unit();
         }
 
         /// <summary>
@@ -239,9 +217,6 @@ namespace SGV
 
         private class Unit
         {
-            private string name;
-            private double value;
-
             public double convertTo(Unit unit)
             {
                 // Need to do this.
