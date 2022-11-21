@@ -28,7 +28,6 @@ namespace SGV
             drawArea = new Bitmap(ClientRectangle.Width,
                 ClientRectangle.Height,
                 PixelFormat.Format24bppRgb);
-            // Changed by Sally 2/14
             InitializeDrawArea();
             DrawChart();
             if (b) ShowDialog();
