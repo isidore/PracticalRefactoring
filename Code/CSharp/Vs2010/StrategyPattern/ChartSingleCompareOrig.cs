@@ -21,11 +21,6 @@ namespace SGV
         /// <summary>
         ///     Shows the chart
         /// </summary>
-        /// <param name="ct"></param>
-        /// <param name="jjReq1205"></param>
-        /// <param name="orientation"></param>
-        /// <param name="reverseornotreverse"></param>
-        /// <param name="jackshiddenhack"></param>
         public void iniDS(int ct, string jjReq1205, bool b)
         {
             this.ct = ct;
