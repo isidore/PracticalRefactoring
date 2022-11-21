@@ -160,11 +160,6 @@ namespace SGV
             }
         }
 
-        protected override void OnClosed(EventArgs e)
-        {
-            base.OnClosed(e);
-        }
-
         private class Unit
         {
             public double convertTo(Unit unit)
