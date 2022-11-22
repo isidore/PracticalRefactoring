@@ -25,9 +25,7 @@ namespace SGV
         {
             this.ct = ct;
             this.jjReq1205 = jjReq1205;
-            drawArea = new Bitmap(ClientRectangle.Width,
-                ClientRectangle.Height,
-                PixelFormat.Format24bppRgb);
+            drawArea = new Bitmap(ClientRectangle.Width, ClientRectangle.Height, PixelFormat.Format24bppRgb);
             InitializeDrawArea();
             DrawChart();
             if (ifTrueShowDialog)
