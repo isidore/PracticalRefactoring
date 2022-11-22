@@ -33,8 +33,7 @@ namespace SGV
 
         private void InitializeDrawArea()
         {
-            var g = Graphics.FromImage(drawArea);
-            g.Clear(Color.LightYellow);
+            Graphics.FromImage(drawArea).Clear(Color.LightYellow);
         }
 
         private void ChartSingleCompareOrig_Paint(object sender, PaintEventArgs eventArgs)
