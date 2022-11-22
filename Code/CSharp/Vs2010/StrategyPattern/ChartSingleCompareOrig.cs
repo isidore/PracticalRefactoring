@@ -11,7 +11,7 @@ namespace SGV
         private int ct;
 
         private Bitmap drawArea;
-        private string jjD;
+        private string jjReq1205;
 
         public ChartSingleCompareOrig()
         {
@@ -24,7 +24,7 @@ namespace SGV
         public void InitializeDataStructure(int ct, string jjReq1205, bool b)
         {
             this.ct = ct;
-            jjD = jjReq1205;
+            this.jjReq1205 = jjReq1205;
             drawArea = new Bitmap(ClientRectangle.Width,
                 ClientRectangle.Height,
                 PixelFormat.Format24bppRgb);
@@ -49,7 +49,7 @@ namespace SGV
 
         private void DrawChart()
         {
-            var jjD = this.jjD;
+            var jjD = this.jjReq1205;
             var g = Graphics.FromImage(drawArea);
             g.Clear(Color.LightYellow);
 
