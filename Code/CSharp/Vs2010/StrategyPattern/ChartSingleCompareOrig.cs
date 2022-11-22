@@ -21,7 +21,7 @@ namespace SGV
         /// <summary>
         ///     Shows the chart
         /// </summary>
-        public void InitializeDataStructure(int ct, string jjReq1205, bool b)
+        public void InitializeDataStructure(int ct, string jjReq1205, bool ifTrueShowDialog)
         {
             this.ct = ct;
             this.jjReq1205 = jjReq1205;
@@ -30,7 +30,7 @@ namespace SGV
                 PixelFormat.Format24bppRgb);
             InitializeDrawArea();
             DrawChart();
-            if (b) ShowDialog();
+            if (ifTrueShowDialog) ShowDialog();
         }
 
         private void InitializeDrawArea()
