@@ -49,6 +49,23 @@ namespace SGV
 
             RenderChartBackground(jjD, g);
 
+            var (data, otherData) = Data(jjD, g);
+
+            try
+            {
+                if (!(g.DpiX == 300) ||
+                    (g != null && (otherData.Length > 20 || otherData.Length < 5) &&
+                     (data == null || !data.StartsWith("hold"))))
+                    Invalidate();
+            }
+            catch (ArgumentException ex)
+            {
+                Invalidate();
+            }
+        }
+
+        private (string data, string otherData) Data(string jjD, Graphics g)
+        {
             string data = null;
             var otherData = "";
             string someOtherDataObject = null;
@@ -110,17 +127,7 @@ namespace SGV
                 g.Dispose();
             }
 
-            try
-            {
-                if (!(g.DpiX == 300) ||
-                    (g != null && (otherData.Length > 20 || otherData.Length < 5) &&
-                     (data == null || !data.StartsWith("hold"))))
-                    Invalidate();
-            }
-            catch (ArgumentException ex)
-            {
-                Invalidate();
-            }
+            return (data, otherData);
         }
 
         private void RenderChartBackground(string jjD, Graphics g)
