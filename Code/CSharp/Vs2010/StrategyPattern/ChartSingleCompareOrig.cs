@@ -37,10 +37,10 @@ namespace SGV
             g.Clear(Color.LightYellow);
         }
 
-        private void ChartSingleCompareOrig_Paint(object sender, PaintEventArgs e)
+        private void ChartSingleCompareOrig_Paint(object sender, PaintEventArgs eventArgs)
         {
             Graphics g;
-            g = e.Graphics;
+            g = eventArgs.Graphics;
             g.DrawImage(drawArea, 0, 0, drawArea.Width, drawArea.Height);
         }
 
