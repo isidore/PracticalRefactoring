@@ -21,7 +21,7 @@ namespace SGV
         /// <summary>
         ///     Shows the chart
         /// </summary>
-        public void iniDS(int ct, string jjReq1205, bool b)
+        public void InitializeDataStructure(int ct, string jjReq1205, bool b)
         {
             this.ct = ct;
             jjD = jjReq1205;

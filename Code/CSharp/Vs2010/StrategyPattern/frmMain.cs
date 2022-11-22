@@ -85,7 +85,7 @@ namespace SGV
     	public ChartSingleCompareOrig LaunchChart(int chartType, string displayType, bool asDialog)
         {
             ChartSingleCompareOrig chartSingleCompareOrig = new ChartSingleCompareOrig();
-            chartSingleCompareOrig.iniDS(chartType, displayType, asDialog);
+            chartSingleCompareOrig.InitializeDataStructure(chartType, displayType, asDialog);
             return chartSingleCompareOrig;
         }
     }
