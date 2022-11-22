@@ -19,9 +19,9 @@ namespace SGV
         }
 
         /// <summary>
-        ///     Shows the chart
+        /// Shows the chart
         /// </summary>
-        public void InitializeDataStructure(int ct, string jjReq1205, bool ifTrueShowDialog)
+        public void ShowChart(int ct, string jjReq1205, bool ifTrueShowDialog)
         {
             this.ct = ct;
             this.jjReq1205 = jjReq1205;
