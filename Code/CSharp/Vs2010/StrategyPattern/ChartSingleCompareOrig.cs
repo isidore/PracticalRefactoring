@@ -18,9 +18,6 @@ namespace SGV
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Shows the chart
-        /// </summary>
         public void ShowChart(int ct, string jjReq1205, bool ifTrueShowDialog)
         {
             this.ct = ct;
