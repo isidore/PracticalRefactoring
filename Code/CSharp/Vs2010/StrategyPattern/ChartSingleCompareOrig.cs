@@ -33,8 +33,7 @@ namespace SGV
 
         private void InitializeDrawArea()
         {
-            Graphics g;
-            g = Graphics.FromImage(drawArea);
+            var g = Graphics.FromImage(drawArea);
             g.Clear(Color.LightYellow);
         }
 
