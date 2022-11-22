@@ -47,7 +47,6 @@ namespace SGV
             var g = Graphics.FromImage(drawArea);
             g.Clear(Color.LightYellow);
 
-            // Render chart background
             RenderChartBackground(jjD, g);
 
             string data = null;
