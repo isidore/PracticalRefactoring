@@ -39,8 +39,7 @@ namespace SGV
 
         private void ChartSingleCompareOrig_Paint(object sender, PaintEventArgs eventArgs)
         {
-            var g = eventArgs.Graphics;
-            g.DrawImage(drawArea, 0, 0, drawArea.Width, drawArea.Height);
+            eventArgs.Graphics.DrawImage(drawArea, 0, 0, drawArea.Width, drawArea.Height);
         }
 
         private void DrawChart()
