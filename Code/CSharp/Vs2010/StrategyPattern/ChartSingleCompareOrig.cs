@@ -48,37 +48,7 @@ namespace SGV
             g.Clear(Color.LightYellow);
 
             // Render chart background
-            SolidBrush brush;
-            if (ct == 150)
-            {
-                if (jjD == "rpfll")
-                {
-                    brush = new SolidBrush(Color.Red);
-                    g.FillRectangle(brush, 50, 100, 300, 300);
-                }
-                else
-                {
-                    brush = new SolidBrush(Color.Red);
-
-
-                    g.FillRectangle(brush, 50, 100, 150, 150);
-                }
-            }
-            else
-            {
-                if (jjD != "rpfll")
-                {
-                    brush = new SolidBrush(Color.Blue);
-                    g.FillEllipse(brush, 50, 100, 160, 160);
-                }
-                else
-                {
-                    brush = new SolidBrush(Color.Blue);
-                    g.FillEllipse(brush, 50, 100, 320, 320);
-                }
-            }
-
-            brush.Dispose();
+            RenderChartBackground(jjD, g);
 
             string data = null;
             var otherData = "";
@@ -152,6 +122,41 @@ namespace SGV
             {
                 Invalidate();
             }
+        }
+
+        private void RenderChartBackground(string jjD, Graphics g)
+        {
+            SolidBrush brush;
+            if (ct == 150)
+            {
+                if (jjD == "rpfll")
+                {
+                    brush = new SolidBrush(Color.Red);
+                    g.FillRectangle(brush, 50, 100, 300, 300);
+                }
+                else
+                {
+                    brush = new SolidBrush(Color.Red);
+
+
+                    g.FillRectangle(brush, 50, 100, 150, 150);
+                }
+            }
+            else
+            {
+                if (jjD != "rpfll")
+                {
+                    brush = new SolidBrush(Color.Blue);
+                    g.FillEllipse(brush, 50, 100, 160, 160);
+                }
+                else
+                {
+                    brush = new SolidBrush(Color.Blue);
+                    g.FillEllipse(brush, 50, 100, 320, 320);
+                }
+            }
+
+            brush.Dispose();
         }
     }
 }
