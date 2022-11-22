@@ -30,7 +30,10 @@ namespace SGV
                 PixelFormat.Format24bppRgb);
             InitializeDrawArea();
             DrawChart();
-            if (ifTrueShowDialog) ShowDialog();
+            if (ifTrueShowDialog)
+            {
+                ShowDialog();
+            }
         }
 
         private void InitializeDrawArea()
