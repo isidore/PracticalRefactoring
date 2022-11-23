@@ -10,6 +10,7 @@ namespace SGV
     {
         private const int ctRelated_1 = 150;
         private const string jjD_splitDisplay = "splitdisplay";
+        private const string _jjDEqualsRpfll = "rpfll";
         private int ct;
 
         private Bitmap drawArea;
@@ -113,14 +114,14 @@ namespace SGV
 
             if (ct == ctRelated_1)
             {
-                if (jjD == "rpfll")
+                if (jjD == _jjDEqualsRpfll)
                     data = "Bar Data\nLarge";
                 else
                     data = "Bar Data\nSmall";
             }
             else
             {
-                if (jjD == "rpfll")
+                if (jjD == _jjDEqualsRpfll)
                     otherData = "Pie Data\nLarge";
                 else
                     someOtherDataObject = "Pie Data\nSmall";
@@ -134,7 +135,7 @@ namespace SGV
             SolidBrush brush;
             if (ct == 150)
             {
-                if (jjD == "rpfll")
+                if (jjD == _jjDEqualsRpfll)
                 {
                     brush = new SolidBrush(Color.Red);
                     g.FillRectangle(brush, 50, 100, 300, 300);
@@ -149,7 +150,7 @@ namespace SGV
             }
             else
             {
-                if (jjD != "rpfll")
+                if (jjD != _jjDEqualsRpfll)
                 {
                     brush = new SolidBrush(Color.Blue);
                     g.FillEllipse(brush, 50, 100, 160, 160);
