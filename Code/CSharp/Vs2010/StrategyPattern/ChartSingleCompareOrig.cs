@@ -11,7 +11,7 @@ namespace SGV
         private const int ct_BarData = 150;
         private const string jjD_splitDisplay = "splitdisplay";
         private const string jjd_large = "rpfll";
-        private int ct;
+        private int chartType;
 
         private Bitmap drawArea;
         private string jjReq1205;
@@ -23,7 +23,7 @@ namespace SGV
 
         public void ShowChart(int ct, string jjReq1205, bool ifTrueShowDialog)
         {
-            this.ct = ct;
+            this.chartType = ct;
             this.jjReq1205 = jjReq1205;
             drawArea = new Bitmap(ClientRectangle.Width, ClientRectangle.Height, PixelFormat.Format24bppRgb);
             InitializeDrawArea();
@@ -72,7 +72,7 @@ namespace SGV
             var (data, otherData, someOtherDataObject) = FillAllData(jjD);
 
             
-            if (ct == ct_BarData)
+            if (chartType == ct_BarData)
             {
                 if (jjD == jjD_splitDisplay)
                     g.DrawString(data, new Font("Arial Black", 20), new SolidBrush(Color.White), new PointF(60, 110));
@@ -112,7 +112,7 @@ namespace SGV
             var otherData = "";
             string someOtherDataObject = null;
 
-            if (ct == ct_BarData)
+            if (chartType == ct_BarData)
             {
                 if (jjD == jjd_large)
                     data = "Bar Data\nLarge";
@@ -133,7 +133,7 @@ namespace SGV
         private void RenderChartBackground(string jjD, Graphics g)
         {
             SolidBrush brush;
-            if (ct == ct_BarData)
+            if (chartType == ct_BarData)
             {
                 if (jjD == jjd_large)
                 {
