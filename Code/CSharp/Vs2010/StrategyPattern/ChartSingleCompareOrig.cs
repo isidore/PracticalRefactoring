@@ -8,7 +8,7 @@ namespace SGV
 {
     public partial class ChartSingleCompareOrig : Form
     {
-        private const int ctRelated_1 = 150;
+        private const int ct_BarData = 150;
         private const string jjD_splitDisplay = "splitdisplay";
         private const string jjd_large = "rpfll";
         private int ct;
@@ -72,7 +72,7 @@ namespace SGV
             var (data, otherData, someOtherDataObject) = FillAllData(jjD);
 
             
-            if (ct == ctRelated_1)
+            if (ct == ct_BarData)
             {
                 if (jjD == jjD_splitDisplay)
                     g.DrawString(data, new Font("Arial Black", 20), new SolidBrush(Color.White), new PointF(60, 110));
@@ -112,7 +112,7 @@ namespace SGV
             var otherData = "";
             string someOtherDataObject = null;
 
-            if (ct == ctRelated_1)
+            if (ct == ct_BarData)
             {
                 if (jjD == jjd_large)
                     data = "Bar Data\nLarge";
