@@ -66,24 +66,7 @@ namespace SGV
 
         private (string data, string otherData) Data(string jjD, Graphics g)
         {
-            string data = null;
-            var otherData = "";
-            string someOtherDataObject = null;
-
-            if (ct == 150)
-            {
-                if (jjD == "rpfll")
-                    data = "Bar Data\nLarge";
-                else
-                    data = "Bar Data\nSmall";
-            }
-            else
-            {
-                if (jjD == "rpfll")
-                    otherData = "Pie Data\nLarge";
-                else
-                    someOtherDataObject = "Pie Data\nSmall";
-            }
+            var (data, otherData, someOtherDataObject) = FillAllData(jjD);
 
             if (ct == 150)
             {
@@ -128,6 +111,30 @@ namespace SGV
             }
 
             return (data, otherData);
+        }
+
+        private (string data, string otherData, string someOtherDataObject) FillAllData(string jjD)
+        {
+            string data = null;
+            var otherData = "";
+            string someOtherDataObject = null;
+
+            if (ct == 150)
+            {
+                if (jjD == "rpfll")
+                    data = "Bar Data\nLarge";
+                else
+                    data = "Bar Data\nSmall";
+            }
+            else
+            {
+                if (jjD == "rpfll")
+                    otherData = "Pie Data\nLarge";
+                else
+                    someOtherDataObject = "Pie Data\nSmall";
+            }
+
+            return (data, otherData, someOtherDataObject);
         }
 
         private void RenderChartBackground(string jjD, Graphics g)
