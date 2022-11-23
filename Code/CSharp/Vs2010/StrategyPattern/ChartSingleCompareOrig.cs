@@ -8,6 +8,7 @@ namespace SGV
 {
     public partial class ChartSingleCompareOrig : Form
     {
+        private const int ctRelated_1 = 150;
         private int ct;
 
         private Bitmap drawArea;
@@ -68,7 +69,8 @@ namespace SGV
         {
             var (data, otherData, someOtherDataObject) = FillAllData(jjD);
 
-            if (ct == 150)
+            
+            if (ct == ctRelated_1)
             {
                 if (jjD == "splitdisplay")
                     g.DrawString(data, new Font("Arial Black", 20), new SolidBrush(Color.White), new PointF(60, 110));
