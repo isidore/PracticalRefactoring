@@ -133,7 +133,7 @@ namespace SGV
         private void RenderChartBackground(string jjD, Graphics g)
         {
             SolidBrush brush;
-            if (ct == 150)
+            if (ct == ct_BarData)
             {
                 if (jjD == jjd_large)
                 {
