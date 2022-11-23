@@ -111,7 +111,7 @@ namespace SGV
             var otherData = "";
             string someOtherDataObject = null;
 
-            if (ct == 150)
+            if (ct == ctRelated_1)
             {
                 if (jjD == "rpfll")
                     data = "Bar Data\nLarge";
