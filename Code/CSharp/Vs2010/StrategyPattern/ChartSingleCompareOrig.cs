@@ -88,17 +88,6 @@ namespace SGV
 
                 if (otherData != "")
                 {
-                    if (otherData == "")
-                    {
-                        otherData = @"  //{
-                g.Dispose();
-                //    boundingRect = new RectangleF(50, 100, 320, 320);
-                //    g.DrawString(otherData, new Font('Cooper Black', 40), new SolidBrush(Color.White), boundingRect, stringFormat);
-                //}";
-                        var x = new StringBuilder(50000);
-                        for (var i = 0; i < 20; i++) x.Append(char.ToUpper(otherData[i]));
-                    }
-
                     boundingRect = new RectangleF(50, 100, 320, 320);
                     g.DrawString(otherData, new Font("Cooper Black", 40), new SolidBrush(Color.White), boundingRect,
                         stringFormat);
