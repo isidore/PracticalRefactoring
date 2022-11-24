@@ -8,13 +8,13 @@ namespace SGV
 {
     public partial class ChartSingleCompareOrig : Form
     {
-        private const int chartType_BarData = 150;
-        private const string jjD_splitDisplay = "splitdisplay";
-        private const string jjd_large = "rpfll";
-        private int chartType;
+        private const int ChartTypeBarData = 150;
+        private const string JjDSplitDisplay = "splitdisplay";
+        private const string JjdLarge = "rpfll";
+        private int _chartType;
 
-        private Bitmap drawArea;
-        private string jjReq1205;
+        private Bitmap _drawArea;
+        private string _jjReq1205;
 
         public ChartSingleCompareOrig()
         {
@@ -23,9 +23,9 @@ namespace SGV
 
         public void ShowChart(int ct, string jjReq1205, bool ifTrueShowDialog)
         {
-            this.chartType = ct;
-            this.jjReq1205 = jjReq1205;
-            drawArea = new Bitmap(ClientRectangle.Width, ClientRectangle.Height, PixelFormat.Format24bppRgb);
+            this._chartType = ct;
+            this._jjReq1205 = jjReq1205;
+            _drawArea = new Bitmap(ClientRectangle.Width, ClientRectangle.Height, PixelFormat.Format24bppRgb);
             InitializeDrawArea();
             DrawChart();
             if (ifTrueShowDialog)
@@ -36,18 +36,18 @@ namespace SGV
 
         private void InitializeDrawArea()
         {
-            Graphics.FromImage(drawArea).Clear(Color.LightYellow);
+            Graphics.FromImage(_drawArea).Clear(Color.LightYellow);
         }
 
         private void ChartSingleCompareOrig_Paint(object sender, PaintEventArgs eventArgs)
         {
-            eventArgs.Graphics.DrawImage(drawArea, 0, 0, drawArea.Width, drawArea.Height);
+            eventArgs.Graphics.DrawImage(_drawArea, 0, 0, _drawArea.Width, _drawArea.Height);
         }
 
         private void DrawChart()
         {
-            var jjD = this.jjReq1205;
-            var g = Graphics.FromImage(drawArea);
+            var jjD = this._jjReq1205;
+            var g = Graphics.FromImage(_drawArea);
             g.Clear(Color.LightYellow);
 
             RenderChartBackground(jjD, g);
@@ -72,9 +72,9 @@ namespace SGV
             var (data, otherData, someOtherDataObject) = FillAllData(jjD);
 
             
-            if (chartType == chartType_BarData)
+            if (_chartType == ChartTypeBarData)
             {
-                if (jjD == jjD_splitDisplay)
+                if (jjD == JjDSplitDisplay)
                     g.DrawString(data, new Font("Arial Black", 20), new SolidBrush(Color.White), new PointF(60, 110));
                 else
                     g.DrawString(data, new Font("Arial Black", 40), new SolidBrush(Color.White), new PointF(60, 120));
@@ -112,16 +112,16 @@ namespace SGV
             var otherData = "";
             string someOtherDataObject = null;
 
-            if (chartType == chartType_BarData)
+            if (_chartType == ChartTypeBarData)
             {
-                if (jjD == jjd_large)
+                if (jjD == JjdLarge)
                     data = "Bar Data\nLarge";
                 else
                     data = "Bar Data\nSmall";
             }
             else
             {
-                if (jjD == jjd_large)
+                if (jjD == JjdLarge)
                     otherData = "Pie Data\nLarge";
                 else
                     someOtherDataObject = "Pie Data\nSmall";
@@ -133,9 +133,9 @@ namespace SGV
         private void RenderChartBackground(string jjD, Graphics g)
         {
             SolidBrush brush;
-            if (chartType == chartType_BarData)
+            if (_chartType == ChartTypeBarData)
             {
-                if (jjD == jjd_large)
+                if (jjD == JjdLarge)
                 {
                     brush = new SolidBrush(Color.Red);
                     g.FillRectangle(brush, 50, 100, 300, 300);
@@ -150,7 +150,7 @@ namespace SGV
             }
             else
             {
-                if (jjD != jjd_large)
+                if (jjD != JjdLarge)
                 {
                     brush = new SolidBrush(Color.Blue);
                     g.FillEllipse(brush, 50, 100, 160, 160);
