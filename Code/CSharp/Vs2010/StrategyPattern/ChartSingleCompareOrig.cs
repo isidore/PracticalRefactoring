@@ -151,29 +151,25 @@ namespace SGV
             SolidBrush brush;
             if (_chartType == ChartTypeBarData)
             {
+                brush = new SolidBrush(Color.Red);
                 if (chartSize == ChartSizeLarge)
                 {
-                    brush = new SolidBrush(Color.Red);
                     g.FillRectangle(brush, 50, 100, 300, 300);
                 }
                 else
                 {
-                    brush = new SolidBrush(Color.Red);
-
-
                     g.FillRectangle(brush, 50, 100, 150, 150);
                 }
             }
             else
             {
+                brush = new SolidBrush(Color.Blue);
                 if (chartSize != ChartSizeLarge)
                 {
-                    brush = new SolidBrush(Color.Blue);
                     g.FillEllipse(brush, 50, 100, 160, 160);
                 }
                 else
                 {
-                    brush = new SolidBrush(Color.Blue);
                     g.FillEllipse(brush, 50, 100, 320, 320);
                 }
             }
