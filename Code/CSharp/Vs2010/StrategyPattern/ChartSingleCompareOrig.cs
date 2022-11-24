@@ -15,7 +15,7 @@ namespace SGV
         private int _chartType;
 
         private Bitmap _drawArea;
-        private string _jjReq1205;
+        private string _chartSize;
 
         public ChartSingleCompareOrig()
         {
@@ -25,7 +25,7 @@ namespace SGV
         public void ShowChart(int chartType, string jjReq1205, bool showDialog)
         {
             _chartType = chartType;
-            _jjReq1205 = jjReq1205;
+            _chartSize = jjReq1205;
             _drawArea = new Bitmap(ClientRectangle.Width, ClientRectangle.Height, PixelFormat.Format24bppRgb);
             InitializeDrawArea();
             DrawChart();
@@ -49,9 +49,9 @@ namespace SGV
         {
             var g = Graphics.FromImage(_drawArea);
 
-            RenderChartBackground(g, _jjReq1205);
+            RenderChartBackground(g, _chartSize);
 
-            var (barData, pieData) = RenderData(g, _jjReq1205);
+            var (barData, pieData) = RenderData(g, _chartSize);
 
             Redraw(g, pieData, barData);
         }
