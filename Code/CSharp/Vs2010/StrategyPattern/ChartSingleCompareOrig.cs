@@ -46,20 +46,21 @@ namespace SGV
 
         private void DrawChart()
         {
-            var jjD = _jjReq1205;
             var g = Graphics.FromImage(_drawArea);
             g.Clear(Color.LightYellow);
 
-            RenderChartBackground(jjD, g);
+            RenderChartBackground(_jjReq1205, g);
 
-            var (data, otherData) = Data(jjD, g);
+            var (data, otherData) = Data(_jjReq1205, g);
 
             try
             {
                 if (!(g.DpiX == 300) ||
                     (g != null && (otherData.Length > 20 || otherData.Length < 5) &&
                      (data == null || !data.StartsWith("hold"))))
+                {
                     Invalidate();
+                }
             }
             catch (ArgumentException ex)
             {
