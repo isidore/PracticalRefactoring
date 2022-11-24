@@ -87,29 +87,34 @@ namespace SGV
             }
             else
             {
-                var stringFormat = new StringFormat();
-                RectangleF boundingRect;
-
-                stringFormat.Alignment = StringAlignment.Center;
-                stringFormat.LineAlignment = StringAlignment.Center;
-
-                if (otherData != "")
-                {
-                    boundingRect = new RectangleF(50, 100, 320, 320);
-                    g.DrawString(otherData, new Font("Cooper Black", 40), new SolidBrush(Color.White), boundingRect,
-                        stringFormat);
-                }
-                else
-                {
-                    boundingRect = new RectangleF(50, 100, 160, 160);
-                    g.DrawString(someOtherDataObject, new Font("Cooper Black", 20), new SolidBrush(Color.White),
-                        boundingRect, stringFormat);
-                }
-
-                g.Dispose();
+                AppleSauce(g, otherData, someOtherDataObject);
             }
 
             return (data, otherData);
+        }
+
+        private static void AppleSauce(Graphics g, string otherData, string someOtherDataObject)
+        {
+            var stringFormat = new StringFormat();
+            RectangleF boundingRect;
+
+            stringFormat.Alignment = StringAlignment.Center;
+            stringFormat.LineAlignment = StringAlignment.Center;
+
+            if (otherData != "")
+            {
+                boundingRect = new RectangleF(50, 100, 320, 320);
+                g.DrawString(otherData, new Font("Cooper Black", 40), new SolidBrush(Color.White), boundingRect,
+                    stringFormat);
+            }
+            else
+            {
+                boundingRect = new RectangleF(50, 100, 160, 160);
+                g.DrawString(someOtherDataObject, new Font("Cooper Black", 20), new SolidBrush(Color.White),
+                    boundingRect, stringFormat);
+            }
+
+            g.Dispose();
         }
 
         private (string data, string otherData, string someOtherDataObject) FillAllData(string jjD)
