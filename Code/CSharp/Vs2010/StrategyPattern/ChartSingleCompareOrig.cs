@@ -51,9 +51,9 @@ namespace SGV
 
             RenderChartBackground(g, _jjReq1205);
 
-            var (data, otherData) = RenderData(g, _jjReq1205);
+            var (barData, pieData) = RenderData(g, _jjReq1205);
 
-            Redraw(g, otherData, data);
+            Redraw(g, pieData, barData);
         }
 
         private void Redraw(Graphics g, string otherData, string data)
@@ -73,21 +73,21 @@ namespace SGV
             }
         }
 
-        private (string data, string otherData) RenderData(Graphics g, string jjD)
+        private (string barData, string pieData) RenderData(Graphics g, string jjD)
         {
-            var (data, otherData, someOtherDataObject) = FillAllData(jjD);
+            var (barData, pieData, someOtherDataObject) = FillAllData(jjD);
 
             
             if (_chartType == ChartTypeBarData)
             {
-                DrawBar(g, jjD, data);
+                DrawBar(g, jjD, barData);
             }
             else
             {
-                DrawPie(g, otherData, someOtherDataObject);
+                DrawPie(g, pieData, someOtherDataObject);
             }
 
-            return (data, otherData);
+            return (barData, pieData);
         }
 
         private static void DrawBar(Graphics g, string jjD, string data)
@@ -122,28 +122,28 @@ namespace SGV
             g.Dispose();
         }
 
-        private (string data, string otherData, string someOtherDataObject) FillAllData(string jjD)
+        private (string barData, string pieData, string someOtherDataObject) FillAllData(string jjD)
         {
-            string data = null;
-            var otherData = "";
+            string barData = null;
+            var pieData = "";
             string someOtherDataObject = null;
 
             if (_chartType == ChartTypeBarData)
             {
                 if (jjD == JjdLarge)
-                    data = "Bar Data\nLarge";
+                    barData = "Bar Data\nLarge";
                 else
-                    data = "Bar Data\nSmall";
+                    barData = "Bar Data\nSmall";
             }
             else
             {
                 if (jjD == JjdLarge)
-                    otherData = "Pie Data\nLarge";
+                    pieData = "Pie Data\nLarge";
                 else
                     someOtherDataObject = "Pie Data\nSmall";
             }
 
-            return (data, otherData, someOtherDataObject);
+            return (barData, pieData, someOtherDataObject);
         }
 
         private void RenderChartBackground(Graphics g, string jjD)
