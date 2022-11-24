@@ -22,10 +22,10 @@ namespace SGV
             InitializeComponent();
         }
 
-        public void ShowChart(int chartType, string jjReq1205, bool showDialog)
+        public void ShowChart(int chartType, string chartSize, bool showDialog)
         {
             _chartType = chartType;
-            _chartSize = jjReq1205;
+            _chartSize = chartSize;
             _drawArea = new Bitmap(ClientRectangle.Width, ClientRectangle.Height, PixelFormat.Format24bppRgb);
             InitializeDrawArea();
             DrawChart();
