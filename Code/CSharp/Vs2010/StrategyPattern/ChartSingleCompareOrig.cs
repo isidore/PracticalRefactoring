@@ -68,7 +68,7 @@ namespace SGV
                     Invalidate();
                 }
             }
-            catch (ArgumentException ex)
+            catch (ArgumentException)
             {
                 Invalidate();
             }
