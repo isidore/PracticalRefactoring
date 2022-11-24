@@ -122,28 +122,28 @@ namespace SGV
             g.Dispose();
         }
 
-        private (string barData, string pieData, string someOtherDataObject) FillAllData(string jjD)
+        private (string barData, string pieData, string pieDataSmall) FillAllData(string chartSize)
         {
             string barData = null;
             var pieData = "";
-            string someOtherDataObject = null;
+            string pieDataSmall = null;
 
             if (_chartType == ChartTypeBarData)
             {
-                if (jjD == JjdLarge)
+                if (chartSize == JjdLarge)
                     barData = "Bar Data\nLarge";
                 else
                     barData = "Bar Data\nSmall";
             }
             else
             {
-                if (jjD == JjdLarge)
+                if (chartSize == JjdLarge)
                     pieData = "Pie Data\nLarge";
                 else
-                    someOtherDataObject = "Pie Data\nSmall";
+                    pieDataSmall = "Pie Data\nSmall";
             }
 
-            return (barData, pieData, someOtherDataObject);
+            return (barData, pieData, pieDataSmall);
         }
 
         private void RenderChartBackground(Graphics g, string jjD)
