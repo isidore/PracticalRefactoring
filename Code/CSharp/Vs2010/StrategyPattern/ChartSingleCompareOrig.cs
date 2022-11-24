@@ -11,6 +11,7 @@ namespace SGV
         private const int ChartTypeBarData = 150;
         private const string JjDSplitDisplay = "splitdisplay";
         private const string JjdLarge = "rpfll";
+        private const int _dpi300 = 300;
         private int _chartType;
 
         private Bitmap _drawArea;
@@ -53,9 +54,14 @@ namespace SGV
 
             var (data, otherData) = Data(_jjReq1205, g);
 
+            SomeKindOfInvalidation(g, otherData, data);
+        }
+
+        private void SomeKindOfInvalidation(Graphics g, string otherData, string data)
+        {
             try
             {
-                if (!(g.DpiX == 300) ||
+                if (!(g.DpiX == _dpi300) ||
                     (g != null && (otherData.Length > 20 || otherData.Length < 5) &&
                      (data == null || !data.StartsWith("hold"))))
                 {
