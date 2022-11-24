@@ -49,9 +49,9 @@ namespace SGV
         {
             var g = Graphics.FromImage(_drawArea);
 
-            RenderChartBackground(_jjReq1205, g);
+            RenderChartBackground(g, _jjReq1205);
 
-            var (data, otherData) = Data(_jjReq1205, g);
+            var (data, otherData) = RenderData(g, _jjReq1205);
 
             SomeKindOfInvalidation(g, otherData, data);
         }
@@ -73,7 +73,7 @@ namespace SGV
             }
         }
 
-        private (string data, string otherData) Data(string jjD, Graphics g)
+        private (string data, string otherData) RenderData(Graphics g, string jjD)
         {
             var (data, otherData, someOtherDataObject) = FillAllData(jjD);
 
@@ -136,7 +136,7 @@ namespace SGV
             return (data, otherData, someOtherDataObject);
         }
 
-        private void RenderChartBackground(string jjD, Graphics g)
+        private void RenderChartBackground(Graphics g, string jjD)
         {
             SolidBrush brush;
             if (_chartType == ChartTypeBarData)
