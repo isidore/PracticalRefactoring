@@ -80,20 +80,25 @@ namespace SGV
             
             if (_chartType == ChartTypeBarData)
             {
-                if (jjD == JjDSplitDisplay)
-                    g.DrawString(data, new Font("Arial Black", 20), new SolidBrush(Color.White), new PointF(60, 110));
-                else
-                    g.DrawString(data, new Font("Arial Black", 40), new SolidBrush(Color.White), new PointF(60, 120));
+                DrawBar(g, jjD, data);
             }
             else
             {
-                AppleSauce(g, otherData, someOtherDataObject);
+                DrawPie(g, otherData, someOtherDataObject);
             }
 
             return (data, otherData);
         }
 
-        private static void AppleSauce(Graphics g, string otherData, string someOtherDataObject)
+        private static void DrawBar(Graphics g, string jjD, string data)
+        {
+            if (jjD == JjDSplitDisplay)
+                g.DrawString(data, new Font("Arial Black", 20), new SolidBrush(Color.White), new PointF(60, 110));
+            else
+                g.DrawString(data, new Font("Arial Black", 40), new SolidBrush(Color.White), new PointF(60, 120));
+        }
+
+        private static void DrawPie(Graphics g, string otherData, string someOtherDataObject)
         {
             var stringFormat = new StringFormat();
             RectangleF boundingRect;
