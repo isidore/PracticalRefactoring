@@ -21,14 +21,14 @@ namespace SGV
             InitializeComponent();
         }
 
-        public void ShowChart(int ct, string jjReq1205, bool ifTrueShowDialog)
+        public void ShowChart(int chartType, string jjReq1205, bool showDialog)
         {
-            this._chartType = ct;
-            this._jjReq1205 = jjReq1205;
+            _chartType = chartType;
+            _jjReq1205 = jjReq1205;
             _drawArea = new Bitmap(ClientRectangle.Width, ClientRectangle.Height, PixelFormat.Format24bppRgb);
             InitializeDrawArea();
             DrawChart();
-            if (ifTrueShowDialog)
+            if (showDialog)
             {
                 ShowDialog();
             }
@@ -46,7 +46,7 @@ namespace SGV
 
         private void DrawChart()
         {
-            var jjD = this._jjReq1205;
+            var jjD = _jjReq1205;
             var g = Graphics.FromImage(_drawArea);
             g.Clear(Color.LightYellow);
 
