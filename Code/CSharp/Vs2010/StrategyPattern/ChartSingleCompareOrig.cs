@@ -9,8 +9,8 @@ namespace SGV
     public partial class ChartSingleCompareOrig : Form
     {
         private const int ChartTypeBarData = 150;
-        private const string JjDSplitDisplay = "splitdisplay";
-        private const string JjdLarge = "rpfll";
+        private const string ChartSizeSplitDisplay = "splitdisplay";
+        private const string ChartSizeLarge = "rpfll";
         private const int _dpi300 = 300;
         private int _chartType;
 
@@ -73,14 +73,14 @@ namespace SGV
             }
         }
 
-        private (string barData, string pieData) RenderData(Graphics g, string jjD)
+        private (string barData, string pieData) RenderData(Graphics g, string chartSize)
         {
-            var (barData, pieData, someOtherDataObject) = FillAllData(jjD);
+            var (barData, pieData, someOtherDataObject) = FillAllData(chartSize);
 
             
             if (_chartType == ChartTypeBarData)
             {
-                DrawBar(g, jjD, barData);
+                DrawBar(g, chartSize, barData);
             }
             else
             {
@@ -90,9 +90,9 @@ namespace SGV
             return (barData, pieData);
         }
 
-        private static void DrawBar(Graphics g, string jjD, string data)
+        private static void DrawBar(Graphics g, string chartSize, string data)
         {
-            if (jjD == JjDSplitDisplay)
+            if (chartSize == ChartSizeSplitDisplay)
                 g.DrawString(data, new Font("Arial Black", 20), new SolidBrush(Color.White), new PointF(60, 110));
             else
                 g.DrawString(data, new Font("Arial Black", 40), new SolidBrush(Color.White), new PointF(60, 120));
@@ -130,14 +130,14 @@ namespace SGV
 
             if (_chartType == ChartTypeBarData)
             {
-                if (chartSize == JjdLarge)
+                if (chartSize == ChartSizeLarge)
                     barData = "Bar Data\nLarge";
                 else
                     barData = "Bar Data\nSmall";
             }
             else
             {
-                if (chartSize == JjdLarge)
+                if (chartSize == ChartSizeLarge)
                     pieData = "Pie Data\nLarge";
                 else
                     pieDataSmall = "Pie Data\nSmall";
@@ -146,12 +146,12 @@ namespace SGV
             return (barData, pieData, pieDataSmall);
         }
 
-        private void RenderChartBackground(Graphics g, string jjD)
+        private void RenderChartBackground(Graphics g, string chartSize)
         {
             SolidBrush brush;
             if (_chartType == ChartTypeBarData)
             {
-                if (jjD == JjdLarge)
+                if (chartSize == ChartSizeLarge)
                 {
                     brush = new SolidBrush(Color.Red);
                     g.FillRectangle(brush, 50, 100, 300, 300);
@@ -166,7 +166,7 @@ namespace SGV
             }
             else
             {
-                if (jjD != JjdLarge)
+                if (chartSize != ChartSizeLarge)
                 {
                     brush = new SolidBrush(Color.Blue);
                     g.FillEllipse(brush, 50, 100, 160, 160);
