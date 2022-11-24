@@ -53,10 +53,10 @@ namespace SGV
 
             var (data, otherData) = RenderData(g, _jjReq1205);
 
-            SomeKindOfInvalidation(g, otherData, data);
+            Redraw(g, otherData, data);
         }
 
-        private void SomeKindOfInvalidation(Graphics g, string otherData, string data)
+        private void Redraw(Graphics g, string otherData, string data)
         {
             try
             {
