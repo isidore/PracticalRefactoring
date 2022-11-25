@@ -160,18 +160,17 @@ namespace SGV
 
         private static void RenderBarChart2(Graphics g, string chartSize)
         {
-            SolidBrush brush;
-            brush = new SolidBrush(Color.Blue);
-            if (chartSize != ChartSizeLarge)
+            using (SolidBrush brush = new SolidBrush(Color.Blue))
             {
-                g.FillEllipse(brush, 50, 100, 160, 160);
+                if (chartSize != ChartSizeLarge)
+                {
+                    g.FillEllipse(brush, 50, 100, 160, 160);
+                }
+                else
+                {
+                    g.FillEllipse(brush, 50, 100, 320, 320);
+                }
             }
-            else
-            {
-                g.FillEllipse(brush, 50, 100, 320, 320);
-            }
-
-            brush.Dispose();
         }
 
         private static void RenderBarChart(Graphics g, string chartSize)
