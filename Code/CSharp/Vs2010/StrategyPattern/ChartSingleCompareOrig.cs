@@ -175,18 +175,17 @@ namespace SGV
 
         private static void RenderBarChart(Graphics g, string chartSize)
         {
-            SolidBrush brush;
-            brush = new SolidBrush(Color.Red);
-            if (chartSize == ChartSizeLarge)
+            using (var brush = new SolidBrush(Color.Red))
             {
-                g.FillRectangle(brush, 50, 100, 300, 300);
+                if (chartSize == ChartSizeLarge)
+                {
+                    g.FillRectangle(brush, 50, 100, 300, 300);
+                }
+                else
+                {
+                    g.FillRectangle(brush, 50, 100, 150, 150);
+                }
             }
-            else
-            {
-                g.FillRectangle(brush, 50, 100, 150, 150);
-            }
-
-            brush.Dispose();
         }
     }
 }
