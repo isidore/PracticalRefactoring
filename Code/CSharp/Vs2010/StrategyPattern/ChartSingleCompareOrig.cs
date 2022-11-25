@@ -130,14 +130,7 @@ namespace SGV
 
             if (_chartType == ChartTypeBarData)
             {
-                if (chartSize == ChartSizeLarge)
-                {
-                    barData = "Bar Data\nLarge";
-                }
-                else
-                {
-                    barData = "Bar Data\nSmall";
-                }
+                barData = IntitializeBarData(chartSize);
             }
             else
             {
@@ -152,6 +145,21 @@ namespace SGV
             }
 
             return (barData, pieData, pieDataSmall);
+        }
+
+        private static string IntitializeBarData(string chartSize)
+        {
+            string barData;
+            if (chartSize == ChartSizeLarge)
+            {
+                barData = "Bar Data\nLarge";
+            }
+            else
+            {
+                barData = "Bar Data\nSmall";
+            }
+
+            return barData;
         }
 
         private void RenderChartBackground(Graphics g, string chartSize)
