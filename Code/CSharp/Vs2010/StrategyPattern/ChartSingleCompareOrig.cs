@@ -6,11 +6,15 @@ using System.Windows.Forms;
 
 namespace SGV
 {
+    public class ChartSize
+    {
+        public const string ChartSizeSplitDisplay = "splitdisplay";
+        public const string ChartSizeLarge = "rpfll";
+    }
+
     public partial class ChartSingleCompareOrig : Form
     {
         private const int ChartTypeBarData = 150;
-        private const string ChartSizeSplitDisplay = "splitdisplay";
-        private const string ChartSizeLarge = "rpfll";
         private const int _dpi300 = 300;
         private int _chartType;
 
@@ -92,7 +96,7 @@ namespace SGV
 
         private static void DrawBar(Graphics g, string chartSize, string data)
         {
-            if (chartSize == ChartSizeSplitDisplay)
+            if (chartSize == ChartSize.ChartSizeSplitDisplay)
                 g.DrawString(data, new Font("Arial Black", 20), new SolidBrush(Color.White), new PointF(60, 110));
             else
                 g.DrawString(data, new Font("Arial Black", 40), new SolidBrush(Color.White), new PointF(60, 120));
@@ -134,23 +138,31 @@ namespace SGV
             }
             else
             {
-                if (chartSize == ChartSizeLarge)
-                {
-                    pieData = "Pie Data\nLarge";
-                }
-                else
-                {
-                    pieDataSmall = "Pie Data\nSmall";
-                }
+                (pieData, pieDataSmall) = InitializePieData(chartSize, pieData, pieDataSmall);
             }
 
             return (barData, pieData, pieDataSmall);
         }
 
+        private static (string pieData, string pieDataSmall) InitializePieData(string chartSize, string pieData,
+            string pieDataSmall)
+        {
+            if (chartSize == ChartSize.ChartSizeLarge)
+            {
+                pieData = "Pie Data\nLarge";
+            }
+            else
+            {
+                pieDataSmall = "Pie Data\nSmall";
+            }
+
+            return (pieData, pieDataSmall);
+        }
+
         private static string InitializeBarData(string chartSize)
         {
             string barData;
-            if (chartSize == ChartSizeLarge)
+            if (chartSize == ChartSize.ChartSizeLarge)
             {
                 barData = "Bar Data\nLarge";
             }
@@ -178,7 +190,7 @@ namespace SGV
         {
             using (SolidBrush brush = new SolidBrush(Color.Blue))
             {
-                if (chartSize != ChartSizeLarge)
+                if (chartSize != ChartSize.ChartSizeLarge)
                 {
                     g.FillEllipse(brush, 50, 100, 160, 160);
                 }
@@ -193,7 +205,7 @@ namespace SGV
         {
             using (var brush = new SolidBrush(Color.Red))
             {
-                if (chartSize == ChartSizeLarge)
+                if (chartSize == ChartSize.ChartSizeLarge)
                 {
                     g.FillRectangle(brush, 50, 100, 300, 300);
                 }
