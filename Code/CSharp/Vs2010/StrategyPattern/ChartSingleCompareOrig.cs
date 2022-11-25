@@ -155,17 +155,24 @@ namespace SGV
             }
             else
             {
-                brush = new SolidBrush(Color.Blue);
-                if (chartSize != ChartSizeLarge)
-                {
-                    g.FillEllipse(brush, 50, 100, 160, 160);
-                }
-                else
-                {
-                    g.FillEllipse(brush, 50, 100, 320, 320);
-                }
-                brush.Dispose();
+                RenderBarChart2(g, chartSize);
             }
+        }
+
+        private static void RenderBarChart2(Graphics g, string chartSize)
+        {
+            SolidBrush brush;
+            brush = new SolidBrush(Color.Blue);
+            if (chartSize != ChartSizeLarge)
+            {
+                g.FillEllipse(brush, 50, 100, 160, 160);
+            }
+            else
+            {
+                g.FillEllipse(brush, 50, 100, 320, 320);
+            }
+
+            brush.Dispose();
         }
 
         private static void RenderBarChart(Graphics g, string chartSize)
