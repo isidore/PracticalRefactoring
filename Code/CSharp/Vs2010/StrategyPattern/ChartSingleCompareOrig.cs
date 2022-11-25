@@ -148,7 +148,6 @@ namespace SGV
 
         private void RenderChartBackground(Graphics g, string chartSize)
         {
-            SolidBrush brush;
             if (_chartType == ChartTypeBarData)
             {
                 RenderBarChart(g, chartSize);
