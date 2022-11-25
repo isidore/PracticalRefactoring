@@ -131,16 +131,24 @@ namespace SGV
             if (_chartType == ChartTypeBarData)
             {
                 if (chartSize == ChartSizeLarge)
+                {
                     barData = "Bar Data\nLarge";
+                }
                 else
+                {
                     barData = "Bar Data\nSmall";
+                }
             }
             else
             {
                 if (chartSize == ChartSizeLarge)
+                {
                     pieData = "Pie Data\nLarge";
+                }
                 else
+                {
                     pieDataSmall = "Pie Data\nSmall";
+                }
             }
 
             return (barData, pieData, pieDataSmall);
