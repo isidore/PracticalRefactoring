@@ -151,15 +151,7 @@ namespace SGV
             SolidBrush brush;
             if (_chartType == ChartTypeBarData)
             {
-                brush = new SolidBrush(Color.Red);
-                if (chartSize == ChartSizeLarge)
-                {
-                    g.FillRectangle(brush, 50, 100, 300, 300);
-                }
-                else
-                {
-                    g.FillRectangle(brush, 50, 100, 150, 150);
-                }
+                RenderBarChart(g, chartSize);
             }
             else
             {
@@ -172,6 +164,21 @@ namespace SGV
                 {
                     g.FillEllipse(brush, 50, 100, 320, 320);
                 }
+                brush.Dispose();
+            }
+        }
+
+        private static void RenderBarChart(Graphics g, string chartSize)
+        {
+            SolidBrush brush;
+            brush = new SolidBrush(Color.Red);
+            if (chartSize == ChartSizeLarge)
+            {
+                g.FillRectangle(brush, 50, 100, 300, 300);
+            }
+            else
+            {
+                g.FillRectangle(brush, 50, 100, 150, 150);
             }
 
             brush.Dispose();
