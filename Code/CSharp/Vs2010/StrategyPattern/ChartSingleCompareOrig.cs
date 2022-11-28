@@ -60,7 +60,7 @@ namespace SGV
         {
             RenderChartBackground(that._chartType, g, that._chartSize);
 
-            var (barData, pieData) = that.RenderData(g, that._chartSize);
+            var (barData, pieData) = RenderData(that._chartType, that.FillAllData(that._chartSize), g, that._chartSize);
 
             Redraw(that, g, pieData, barData);
         }
@@ -87,12 +87,12 @@ namespace SGV
                     (data == null || !data.StartsWith("hold")));
         }
 
-        private (string barData, string pieData) RenderData(Graphics g, string chartSize)
+        private static (string barData, string pieData) RenderData(int chartType, (string barData, string pieData, string pieDataSmall) fillAllData, Graphics g, string chartSize)
         {
-            var (barData, pieData, someOtherDataObject) = FillAllData(chartSize);
+            var (barData, pieData, someOtherDataObject) = fillAllData;
 
             
-            if (_chartType == ChartTypeBarData)
+            if (chartType == ChartTypeBarData)
             {
                 DrawBar(g, chartSize, barData);
             }
