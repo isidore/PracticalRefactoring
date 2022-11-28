@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Text;
@@ -52,7 +53,14 @@ namespace SGV
         {
             var g = Graphics.FromImage(_drawArea);
 
-            Chart.DrawChart(this, g, this._chartType, this._chartSize);
+            if (false)
+            {
+                Chart.DrawChart(this, g, this._chartType, this._chartSize);
+            }
+            else
+            {
+                Chart2.DrawChart(this, g, this._chartType, this._chartSize);
+            }
         }
     }
 }
