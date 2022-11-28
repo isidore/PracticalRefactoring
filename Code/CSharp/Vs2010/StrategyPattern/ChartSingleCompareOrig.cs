@@ -14,7 +14,7 @@ namespace SGV
 
     public partial class ChartSingleCompareOrig : Form
     {
-        private const int ChartTypeBarData = 150;
+        public const int ChartTypeBarData = 150;
         private const int _dpi300 = 300;
         private int _chartType;
 
