@@ -53,14 +53,14 @@ namespace SGV
         {
             var g = Graphics.FromImage(_drawArea);
 
-            DrawChart(this, g);
+            DrawChart(this, g, this._chartType);
         }
 
-        private static void DrawChart(ChartSingleCompareOrig that, Graphics g)
+        private static void DrawChart(ChartSingleCompareOrig that, Graphics g, int thatChartType)
         {
-            RenderChartBackground(that._chartType, g, that._chartSize);
+            RenderChartBackground(thatChartType, g, that._chartSize);
 
-            var (barData, pieData) = RenderData(that._chartType, that.FillAllData(that._chartSize), g, that._chartSize);
+            var (barData, pieData) = RenderData(thatChartType, that.FillAllData(that._chartSize), g, that._chartSize);
 
             Redraw(that, g, pieData, barData);
         }
