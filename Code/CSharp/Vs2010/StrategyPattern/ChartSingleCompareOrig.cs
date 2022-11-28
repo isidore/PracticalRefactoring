@@ -53,7 +53,7 @@ namespace SGV
         {
             var g = Graphics.FromImage(_drawArea);
 
-            if (false)
+            if (_chartType != ChartTypeBarData)
             {
                 Chart.DrawChart(this, g, this._chartType, this._chartSize);
             }
