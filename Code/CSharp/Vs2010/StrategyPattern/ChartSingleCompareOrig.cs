@@ -58,7 +58,7 @@ namespace SGV
 
         private static void DrawChart(ChartSingleCompareOrig that, Graphics g)
         {
-            that.RenderChartBackground(g, that._chartSize);
+            RenderChartBackground(that._chartType, g, that._chartSize);
 
             var (barData, pieData) = that.RenderData(g, that._chartSize);
 
@@ -184,9 +184,9 @@ namespace SGV
             return barData;
         }
 
-        private void RenderChartBackground(Graphics g, string chartSize)
+        private static void RenderChartBackground(int chartType, Graphics g, string chartSize)
         {
-            if (_chartType == ChartTypeBarData)
+            if (chartType == ChartTypeBarData)
             {
                 RenderBarChart(g, chartSize);
             }
