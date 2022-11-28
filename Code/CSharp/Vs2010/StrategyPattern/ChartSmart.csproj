@@ -67,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chart2.cs" />
-    <Compile Include="Chart.cs" />
+    <Compile Include="PieChart.cs" />
     <Compile Include="ChartSingleCompareOrig.cs" />
     <Compile Include="ChartSingleCompareOrig.Designer.cs">
       <DependentUpon>ChartSingleCompareOrig.cs</DependentUpon>

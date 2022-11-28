@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SGV
 {
-    public class Chart
+    public class PieChart
     {
         private const int _dpi300 = 300;
 

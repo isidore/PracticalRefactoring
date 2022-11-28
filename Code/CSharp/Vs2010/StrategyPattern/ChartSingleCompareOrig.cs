@@ -55,7 +55,7 @@ namespace SGV
 
             if (_chartType != ChartTypeBarData)
             {
-                Chart.DrawChart(this, g, this._chartType, this._chartSize);
+                PieChart.DrawChart(this, g, this._chartType, this._chartSize);
             }
             else
             {
