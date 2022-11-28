@@ -62,21 +62,21 @@ namespace SGV
 
             var (barData, pieData) = that.RenderData(g, that._chartSize);
 
-            that.Redraw(g, pieData, barData);
+            Redraw(that, g, pieData, barData);
         }
 
-        private void Redraw(Graphics g, string otherData, string data)
+        private static void Redraw(ChartSingleCompareOrig that, Graphics g, string otherData, string data)
         {
             try
             {
                 if (ShouldInvalidate(g, otherData, data))
                 {
-                    Invalidate();
+                    that.Invalidate();
                 }
             }
             catch (ArgumentException)
             {
-                Invalidate();
+                that.Invalidate();
             }
         }
 
