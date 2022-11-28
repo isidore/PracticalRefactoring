@@ -66,9 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChartSingleCompareOrig.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ChartSingleCompareOrig.cs" />
     <Compile Include="ChartSingleCompareOrig.Designer.cs">
       <DependentUpon>ChartSingleCompareOrig.cs</DependentUpon>
     </Compile>

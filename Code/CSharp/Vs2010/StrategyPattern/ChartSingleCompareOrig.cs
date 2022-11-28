@@ -53,6 +53,11 @@ namespace SGV
         {
             var g = Graphics.FromImage(_drawArea);
 
+            DrawChart(g);
+        }
+
+        private void DrawChart(Graphics g)
+        {
             RenderChartBackground(g, _chartSize);
 
             var (barData, pieData) = RenderData(g, _chartSize);
@@ -64,9 +69,7 @@ namespace SGV
         {
             try
             {
-                if (!(g.DpiX == _dpi300) ||
-                    (g != null && (otherData.Length > 20 || otherData.Length < 5) &&
-                     (data == null || !data.StartsWith("hold"))))
+                if (ShouldInvalidate(g, otherData, data))
                 {
                     Invalidate();
                 }
@@ -75,6 +78,13 @@ namespace SGV
             {
                 Invalidate();
             }
+        }
+
+        private static bool ShouldInvalidate(Graphics g, string otherData, string data)
+        {
+            return !(g.DpiX == _dpi300) ||
+                   (g != null && (otherData.Length > 20 || otherData.Length < 5) &&
+                    (data == null || !data.StartsWith("hold")));
         }
 
         private (string barData, string pieData) RenderData(Graphics g, string chartSize)
