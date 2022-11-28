@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SGV
 {
-    internal class Chart
+    public class Chart
     {
     }
 }
