@@ -60,7 +60,7 @@ namespace SGV
         {
             RenderChartBackground(thatChartType, g, thatChartSize);
 
-            var (barData, pieData) = RenderData(thatChartType, FillAllData(that._chartType, thatChartSize), g, thatChartSize);
+            var (barData, pieData) = RenderData(thatChartType, FillAllData(thatChartType, thatChartSize), g, thatChartSize);
 
             Redraw(that, g, pieData, barData);
         }
