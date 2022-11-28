@@ -60,7 +60,7 @@ namespace SGV
         {
             RenderChartBackground(thatChartType, g, thatChartSize);
 
-            var (barData, pieData) = RenderData(thatChartType, that.FillAllData(thatChartSize), g, thatChartSize);
+            var (barData, pieData) = RenderData(thatChartType, FillAllData(that._chartType, thatChartSize), g, thatChartSize);
 
             Redraw(that, g, pieData, barData);
         }
@@ -136,13 +136,13 @@ namespace SGV
             g.Dispose();
         }
 
-        private (string barData, string pieData, string pieDataSmall) FillAllData(string chartSize)
+        private static (string barData, string pieData, string pieDataSmall) FillAllData(int chartType, string chartSize)
         {
             string barData = null;
             var pieData = "";
             string pieDataSmall = null;
 
-            if (_chartType == ChartTypeBarData)
+            if (chartType == ChartTypeBarData)
             {
                 barData = InitializeBarData(chartSize);
             }
