@@ -17,10 +17,10 @@ namespace SGV
 
             var (barData, pieData) = RenderData(thatChartType, FillAllData(thatChartType, thatChartSize), g, thatChartSize);
 
-            Redraw(that, g, pieData, barData, () => ShouldInvalidate(g, pieData, barData));
+            Redraw(that, () => ShouldInvalidate(g, pieData, barData));
         }
 
-        private static void Redraw(ChartSingleCompareOrig that, Graphics g, string otherData, string data, Func<bool> shouldInvalidate)
+        private static void Redraw(ChartSingleCompareOrig that, Func<bool> shouldInvalidate)
         {
             try
             {
