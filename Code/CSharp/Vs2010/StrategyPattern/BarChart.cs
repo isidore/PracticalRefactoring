@@ -44,7 +44,7 @@ namespace SGV
 
         private static (string barData, string pieData) RenderData(int chartType, (string barData, string pieData, string pieDataSmall) fillAllData, Graphics g, string chartSize)
         {
-            var (barData, pieData, someOtherDataObject) = fillAllData;
+            var (barData, pieData, _) = fillAllData;
             
             DrawBar(g, chartSize, barData);
             
