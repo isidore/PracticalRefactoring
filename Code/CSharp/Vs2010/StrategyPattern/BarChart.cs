@@ -59,30 +59,6 @@ namespace SGV
                 g.DrawString(data, new Font("Arial Black", 40), new SolidBrush(Color.White), new PointF(60, 120));
         }
 
-        private static void DrawPie(Graphics g, string otherData, string someOtherDataObject)
-        {
-            var stringFormat = new StringFormat();
-            RectangleF boundingRect;
-
-            stringFormat.Alignment = StringAlignment.Center;
-            stringFormat.LineAlignment = StringAlignment.Center;
-
-            if (otherData != "")
-            {
-                boundingRect = new RectangleF(50, 100, 320, 320);
-                g.DrawString(otherData, new Font("Cooper Black", 40), new SolidBrush(Color.White), boundingRect,
-                    stringFormat);
-            }
-            else
-            {
-                boundingRect = new RectangleF(50, 100, 160, 160);
-                g.DrawString(someOtherDataObject, new Font("Cooper Black", 20), new SolidBrush(Color.White),
-                    boundingRect, stringFormat);
-            }
-
-            g.Dispose();
-        }
-
         private static (string barData, string pieData, string pieDataSmall) FillAllData(int chartType, string chartSize)
         {
             string barData = null;
