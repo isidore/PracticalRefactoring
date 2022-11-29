@@ -45,9 +45,9 @@ namespace SGV
         private static (string barData, string pieData) RenderData(int chartType, (string barData, string pieData, string pieDataSmall) fillAllData, Graphics g, string chartSize)
         {
             var (barData, pieData, someOtherDataObject) = fillAllData;
-            
+
             DrawPie(g, pieData, someOtherDataObject);
-           
+
             return (barData, pieData);
         }
 
@@ -81,14 +81,7 @@ namespace SGV
             var pieData = "";
             string pieDataSmall = null;
 
-            if (chartType == ChartSingleCompareOrig.ChartTypeBarData)
-            {
-                barData = InitializeBarData(chartSize);
-            }
-            else
-            {
-                (pieData, pieDataSmall) = InitializePieData(chartSize, pieData, pieDataSmall);
-            }
+            (pieData, pieDataSmall) = InitializePieData(chartSize, pieData, pieDataSmall);
 
             return (barData, pieData, pieDataSmall);
         }
