@@ -59,7 +59,7 @@ namespace SGV
             }
             else
             {
-                Chart2.DrawChart(this, g, this._chartType, this._chartSize);
+                BarChart.DrawChart(this, g, this._chartType, this._chartSize);
             }
         }
     }

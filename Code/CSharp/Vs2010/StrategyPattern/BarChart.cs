@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SGV
 {
-    public class Chart2
+    public class BarChart
     {
         private const int _dpi300 = 300;
 
