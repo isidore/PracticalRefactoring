@@ -47,15 +47,12 @@ namespace SGV
             var (barData, pieData, someOtherDataObject) = fillAllData;
 
             
-            if (chartType == ChartSingleCompareOrig.ChartTypeBarData)
+            if (true)
             {
                 DrawBar(g, chartSize, barData);
             }
-            else
-            {
-                DrawPie(g, pieData, someOtherDataObject);
-            }
-
+           
+            
             return (barData, pieData);
         }
 
