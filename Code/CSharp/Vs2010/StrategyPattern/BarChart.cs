@@ -70,21 +70,6 @@ namespace SGV
             return (barData, pieData, pieDataSmall);
         }
 
-        private static (string pieData, string pieDataSmall) InitializePieData(string chartSize, string pieData,
-            string pieDataSmall)
-        {
-            if (chartSize == ChartSize.ChartSizeLarge)
-            {
-                pieData = "Pie Data\nLarge";
-            }
-            else
-            {
-                pieDataSmall = "Pie Data\nSmall";
-            }
-
-            return (pieData, pieDataSmall);
-        }
-
         private static string InitializeBarData(string chartSize)
         {
             string barData;
