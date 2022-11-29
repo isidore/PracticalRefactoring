@@ -65,11 +65,8 @@ namespace SGV
             var pieData = "";
             string pieDataSmall = null;
 
-            if (chartType == ChartSingleCompareOrig.ChartTypeBarData)
-            {
-                barData = InitializeBarData(chartSize);
-            }
-           
+            barData = InitializeBarData(chartSize);
+
             return (barData, pieData, pieDataSmall);
         }
 
