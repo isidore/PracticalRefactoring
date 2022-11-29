@@ -69,11 +69,7 @@ namespace SGV
             {
                 barData = InitializeBarData(chartSize);
             }
-            else
-            {
-                (pieData, pieDataSmall) = InitializePieData(chartSize, pieData, pieDataSmall);
-            }
-
+           
             return (barData, pieData, pieDataSmall);
         }
 
