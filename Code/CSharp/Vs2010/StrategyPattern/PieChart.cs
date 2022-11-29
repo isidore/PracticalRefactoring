@@ -120,20 +120,5 @@ namespace SGV
                 }
             }
         }
-
-        private static void RenderBarChart(Graphics g, string chartSize)
-        {
-            using (var brush = new SolidBrush(Color.Red))
-            {
-                if (chartSize == ChartSize.ChartSizeLarge)
-                {
-                    g.FillRectangle(brush, 50, 100, 300, 300);
-                }
-                else
-                {
-                    g.FillRectangle(brush, 50, 100, 150, 150);
-                }
-            }
-        }
     }
 }
