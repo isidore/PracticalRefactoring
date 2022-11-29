@@ -45,17 +45,9 @@ namespace SGV
         private static (string barData, string pieData) RenderData(int chartType, (string barData, string pieData, string pieDataSmall) fillAllData, Graphics g, string chartSize)
         {
             var (barData, pieData, someOtherDataObject) = fillAllData;
-
             
-            if (chartType == ChartSingleCompareOrig.ChartTypeBarData)
-            {
-                DrawBar(g, chartSize, barData);
-            }
-            else
-            {
-                DrawPie(g, pieData, someOtherDataObject);
-            }
-
+            DrawPie(g, pieData, someOtherDataObject);
+           
             return (barData, pieData);
         }
 
