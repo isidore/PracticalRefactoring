@@ -101,21 +101,6 @@ namespace SGV
             return (pieData, pieDataSmall);
         }
 
-        private static string InitializeBarData(string chartSize)
-        {
-            string barData;
-            if (chartSize == ChartSize.ChartSizeLarge)
-            {
-                barData = "Bar Data\nLarge";
-            }
-            else
-            {
-                barData = "Bar Data\nSmall";
-            }
-
-            return barData;
-        }
-
         private static void RenderChartBackground(int chartType, Graphics g, string chartSize)
         {
             if (chartType == ChartSingleCompareOrig.ChartTypeBarData)
