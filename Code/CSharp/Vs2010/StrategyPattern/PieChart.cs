@@ -103,14 +103,7 @@ namespace SGV
 
         private static void RenderChartBackground(int chartType, Graphics g, string chartSize)
         {
-            if (chartType == ChartSingleCompareOrig.ChartTypeBarData)
-            {
-                RenderBarChart(g, chartSize);
-            }
-            else
-            {
-                RenderBarChart2(g, chartSize);
-            }
+            RenderBarChart2(g, chartSize);
         }
 
         private static void RenderBarChart2(Graphics g, string chartSize)
