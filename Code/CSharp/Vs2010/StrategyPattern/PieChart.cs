@@ -9,7 +9,7 @@ namespace SGV
 {
     public class PieChart
     {
-        private const int _dpi300 = 300;
+        private const int Dpi300 = 300;
 
         public static void DrawChart(ChartSingleCompareOrig that, Graphics g, int thatChartType, string thatChartSize)
         {
@@ -37,7 +37,7 @@ namespace SGV
 
         private static bool ShouldInvalidate(Graphics g, string otherData, string data)
         {
-            return !(g.DpiX == _dpi300) ||
+            return !(g.DpiX == Dpi300) ||
                    (g != null && (otherData.Length > 20 || otherData.Length < 5) &&
                     (data == null || !data.StartsWith("hold")));
         }
