@@ -51,14 +51,6 @@ namespace SGV
             return (barData, pieData);
         }
 
-        private static void DrawBar(Graphics g, string chartSize, string data)
-        {
-            if (chartSize == ChartSize.ChartSizeSplitDisplay)
-                g.DrawString(data, new Font("Arial Black", 20), new SolidBrush(Color.White), new PointF(60, 110));
-            else
-                g.DrawString(data, new Font("Arial Black", 40), new SolidBrush(Color.White), new PointF(60, 120));
-        }
-
         private static void DrawPie(Graphics g, string otherData, string someOtherDataObject)
         {
             var stringFormat = new StringFormat();
